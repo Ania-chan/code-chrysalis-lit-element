@@ -1,4 +1,4 @@
-# start-lit-element
+# code-chrysalis-lit-element
 
 A simple web component created with LitElement.
 
