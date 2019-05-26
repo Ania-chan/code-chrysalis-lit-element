@@ -1,7 +1,6 @@
 import { LitElement, customElement, html, css } from 'lit-element';
 import {Button} from "@material/mwc-button";
 
-@customElement('code-chrysalis')
 export class CodeChrysalis extends LitElement {
   static get styles () {
     return css`
@@ -61,6 +60,11 @@ export class CodeChrysalis extends LitElement {
     .green{
       color: #55B491;
     } 
+    
+    .giphy-embed {
+      height: 250px;
+    }
+
     :host([hidden]) { display: none; }
     </style>
 
@@ -68,24 +72,10 @@ export class CodeChrysalis extends LitElement {
     <div>${this.colorMessage(this.text)}</div>
     <mwc-button @click="${this.showMessage}" unelevated label="Can you code?"></mwc-button>
     </div>
-    ${this.coding ? html`` : html`<div>${this.colorMessage(this.message)}<iframe src="https://giphy.com/embed/o0vwzuFwCGAFO" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-hacker-webs-o0vwzuFwCGAFO">via GIPHY</a></p></div>`}
+    ${this.coding ? html`` : html`<div>${this.colorMessage(this.message)}<iframe src="https://giphy.com/embed/o0vwzuFwCGAFO" width="480" height="480" frameBorder="0" class="giphy-embed"></iframe><p><a href="https://giphy.com/gifs/cat-hacker-webs-o0vwzuFwCGAFO">via GIPHY</a></p></div>`}
     `;
   }
 
 }
 
 customElements.define('code-chrysalis', CodeChrysalis);
-
-// <style>
-//   :host(:focus) {
-//     /* style host only if it has received focus */
-//   }
- 
-//   :host(.blue) {
-//     /* style host only if has a blue class */
-//   }
- 
-//   :host([disabled]) {
-//     /* style host only if it's disabled */
-//   }
-// </style>
