@@ -4,6 +4,25 @@ import {Button} from "@material/mwc-button";
 export class CodeChrysalis extends LitElement {
   static get styles () {
     return css`
+    :host {
+      text-transform: uppercase;
+    }
+
+    .blue {
+      color: #4992CA;
+    }
+    .orange {
+      color: #DE713B;
+    }
+    .green{
+      color: #55B491;
+    } 
+    
+    .giphy-embed {
+      height: 250px;
+    }
+
+    :host([hidden]) { display: none; }
     `
   }
 
@@ -46,28 +65,6 @@ export class CodeChrysalis extends LitElement {
 
   render() {
     return html`
-    <style>
-
-    h1 {
-      text-transform: uppercase;
-    }
-    .blue {
-      color: #4992CA;
-    }
-    .orange {
-      color: #DE713B
-    }
-    .green{
-      color: #55B491;
-    } 
-    
-    .giphy-embed {
-      height: 250px;
-    }
-
-    :host([hidden]) { display: none; }
-    </style>
-
     <div>
     <div>${this.colorMessage(this.text)}</div>
     <mwc-button @click="${this.showMessage}" unelevated label="Can you code?"></mwc-button>
